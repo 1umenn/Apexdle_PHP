@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/guessAbility.css">
+    <link rel="stylesheet" href="css/guessAbility.css">
     <title>Guess the Ability</title>
 </head>
 <body>

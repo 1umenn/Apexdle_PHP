@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/guessQuote.css">
+    <link rel="stylesheet" href="css/guessQuote.css">
     <title>Guess the Quote</title>
 </head>
 <body>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/guessWepon.css">
+    <link rel="stylesheet" href="css/guessWeapon.css">
     <title>Guess the Weapon</title>
 </head>
 <body>
