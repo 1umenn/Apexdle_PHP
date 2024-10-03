@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <a href = "index.html"><h1>Apexdle</h1></a>
+        <a href = "index.php"><h1>Apexdle</h1></a>
         <p>Test Your Apex Knowledge</p>
         <h1>Guess the legend based on its Quote</h1>
     </header>
@@ -42,7 +42,7 @@
                         <p id="try"></p>
                     </div>
                 </div>
-                <a href="guessMap.html">
+                <a href="guessMap.php">
                     <div id="button">
                         <div id="doubleBordure">
                             <div id ="SousCategorie">

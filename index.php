@@ -9,8 +9,7 @@
 
 <body>
     <header>
-        <h1>Apex</h1>
-        <h2>dle</h2>
+        <h1>Apexdle</h1>
         <p>Test Your Apex Knowledge !</p>
     </header>
     <main>

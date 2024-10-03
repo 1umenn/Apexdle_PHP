@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <a href = "index.html"><h1>Apexdle</h1></a>
+        <a href = "index.php"><h1>Apexdle</h1></a>
         <p>Test Your Apex Knowledge</p>
         <h1>Guess the legend</h1>
     </header>
