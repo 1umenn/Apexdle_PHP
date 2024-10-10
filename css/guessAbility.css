@@ -11,6 +11,7 @@ header > a > h1{
 body p {
     font-size: 2em;
 }
+
 header p{
     display: flex;
     justify-content: center;
@@ -86,6 +87,7 @@ img{
     width: 40%;
     display: flex;
     justify-content: center;
+    padding: 3%;
 }
 
 .Ability{
@@ -131,5 +133,9 @@ img{
 *{
     font-family: 'Apex_thin';
     text-shadow: 5px 5px 5px black;
+}
+
+img{
+    font-size: 2em;
 }
 

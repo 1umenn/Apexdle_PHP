@@ -12,7 +12,7 @@
         <h1>Guess the legend based on its Ability</h1>
     </header>
     <div class="Ability">
-        <img id="AbilityImage" src="bg" alt="">
+        <img id="AbilityImage" src="bg" alt="Guess ability">
     </div>
     <div id ="jsp">
         <div class = "feur">
