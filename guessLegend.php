@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel = "stylesheet" href = "css/guessLegend.css">
-    <script type="module" src="js/guessLegend.js"></script>
     <title>Document</title>
 </head>
 <body>

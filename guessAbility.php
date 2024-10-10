@@ -56,5 +56,4 @@
     </div>
     <div id="vide"></div>
 </body>
-<script type="module" src="js/guessAbility.js"></script>
 </html>
