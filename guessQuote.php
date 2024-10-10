@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/guessQuote.css">
+    <script type="module" src="js/GuessQuote.js"></script>
     <title>Guess the Quote</title>
 </head>
 <body>

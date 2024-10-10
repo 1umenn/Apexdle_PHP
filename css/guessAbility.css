@@ -19,7 +19,11 @@ header p{
 
 body{
     background-image: url('../image/apexfond3.jpg') ;
-    color :white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-attachment: fixed;
+    color : white;
 }
 
 body h1{

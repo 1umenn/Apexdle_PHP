@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/guessAbility.css">
+    <script type="module" src="js/GuessAbility.js"></script>
     <title>Guess the Ability</title>
 </head>
 <body>
@@ -42,7 +43,7 @@
                         <p id="try"></p>
                     </div>
                 </div>
-                <a href="guessWepon.php">
+                <a href="guessWeapon.php">
                     <div id="button">
                         <div id="doubleBordure">
                             <div id ="SousCategorie">
