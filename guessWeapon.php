@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/guessWeapon.css">
+    <script type="module" src="js/GuessWeapon.js"></script>
     <title>Guess the Weapon</title>
 </head>
 <body>
@@ -12,7 +13,9 @@
         <h1>Guess the legend based on its Weapon</h1>
     </header>
     <div class="Weapon">
-        <img id="WeaponImage" src="bg" alt="">
+        <div id="ConteneurImageWeapon">
+            <img id="WeaponImage" src="" alt="Weapon Image">
+        </div>
     </div>
     <div id ="jsp">
         <div class = "feur">

@@ -88,17 +88,30 @@ img{
 }
 
 #WeaponImage{
-    background-color: rgb(128,128,128,0.5);
     color : white;
-    width: 40%;
     display: flex;
     justify-content: center;
+    max-width: 90%;
+    max-height: 90%;
+    
+}
+
+#ConteneurImageWeapon{
+    background-color: rgb(128,128,128,0.5);
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 
 .Weapon{
-    
+    padding: 3%;
     display: flex;
     justify-content: center;
+    
 }
 
 #display-results{
@@ -150,6 +163,10 @@ img{
 
 #Apexdle{
     letter-spacing: 10px;
+}
+
+img{
+    font-size: 2em;
 }
 
 
