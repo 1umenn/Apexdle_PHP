@@ -127,18 +127,19 @@ const affichage = ( Weapon=null ) =>{
             const divimg = document.createElement("img");
             divimg.src = reponse.image;
             divimg.alt="proposition";
+            divimg.style.maxWidth = "50%";
+            divimg.style.maxHeight = "50%";
             const divarme = document.createElement("h3");
             divarme.textContent = reponse.name;
+            
             divConteneur.appendChild(divimg);
             divConteneur.appendChild(divarme);
-            divimg.style.maxWidth = "30%";
-            divimg.style.maxHeight = "30%";
             divConteneur.style.display = "flex";
             divConteneur.style.justifyContent = "center";
             divConteneur.style.alignItems = "center";
             divConteneur.style.backgroundColor = "red";
-            divConteneur.style.maxWidth = "30%";
-            divConteneur.style.maxHeight = "30%"
+            divConteneur.style.width = "30%";
+            divConteneur.style.height = "70px";
             afficheproposition.appendChild(divConteneur);
         })
         ///////
@@ -149,7 +150,6 @@ const affichage = ( Weapon=null ) =>{
         ListProposition.style.display = "none";
     }
     else if(Weapon!=null){
-        console.log("bite1");
         const DivBonneReponse = document.createElement("div");
         const divimg = document.createElement("img");
         divimg.src = Weapon.image;
@@ -179,7 +179,6 @@ affichage fin de manche une fois l'arme trouvé
 -------------------------------------------------------------------------------
 */
 const afficherFin = (reponse) =>{
-    console.log("bite");
     document.getElementById("GG").style.border = "solid green 8px";
     document.getElementById("GG").style.borderRadius = "10px";
     document.getElementById("GG").style.width = "30%";
