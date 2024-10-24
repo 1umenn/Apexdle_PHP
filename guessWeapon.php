@@ -10,7 +10,7 @@
     <header>
         <a href = "index.php" id="Apexdle"><h1>Apexdle</h1></a>
         <p>Test Your Apex Knowledge</p>
-        <h1>Guess the legend based on its Weapon</h1>
+        <h1>Guess the Weapon based on its Image</h1>
     </header>
     <div class="Weapon">
         <div id="ConteneurImageWeapon">

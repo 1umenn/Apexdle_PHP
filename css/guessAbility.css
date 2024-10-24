@@ -86,7 +86,7 @@ img{
 }
 
 #AbilityImage{
-    background-color: rgb(128,128,128,0.5);
+    background-color: rgb(128,128,128,0.7);
     color : white;
     width: 40%;
     display: flex;

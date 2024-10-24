@@ -3,39 +3,6 @@
  init tableau
  --------------------------------------------------------------------------
  */
- let TabArme = [
-    {name:"HAVOC Rifle"},
-    {name:"VK-47 Flatline"},
-    {name:"Hemlock Burst AR"},
-    {name:"R-301 Carabine"},
-    {name:"Nemesis Burst AR"},
-    {name:"Alternator SMG"},
-    {name:"Prowler Burst PDW"},
-    {name:"R-99 SMG"},
-    {name:"Volt SMG"},
-    {name:"C.A.R SMG"},
-    {name:"Devotion LMG"},
-    {name:"L-STAR EMG"},
-    {name:"M600 Spitfire"},
-    {name:"Rampage LMG"},
-    {name:"G7 Scout"},
-    {name:"Triple Take"},
-    {name:"30-30 Repeater"},
-    {name:"Bocek Compound Bow"},
-    {name:"Charge Rifle"},
-    {name:"Longbow DMR"},
-    {name:"Kraber .50-Cal Sniper"},
-    {name:"Sentinel"},
-    {name:"EVA-8 Auto"},
-    {name:"Mastiff Shotgun"},
-    {name:"Mozambique Shotgun"},
-    {name:"Peacekeeper"},
-    {name:"RE-45 Auto"},
-    {name:"P2020"},
-    {name:"Wingman"},
-    {name:"Throwing knife"}
-];
-
 let TabWeapon = [
     {image : '../image/arme/30-30.webp',  name : '30-30 Repeater'},
     {image : '../image/arme/Alternator.webp',  name : 'Alternator SMG'},
@@ -74,7 +41,6 @@ let TabReponse = [];
 let TabProposition = [];
 
 
-
 /*
 -------------------------------------------------------------------------------
 init attribut utile
@@ -82,8 +48,6 @@ init attribut utile
 */
 
 const image = document.getElementById("WeaponImage");
-
-let Weapon;
 
 let TotalTry = 0;
 
@@ -109,10 +73,9 @@ let ListPropositionTab = document.querySelectorAll("#no-result ul li");
  * pour afficher l'image et sauvegarder l'arme correspondant
  */
 let rand = Math.random() * TabWeapon.length | 0;
-console.log(TabWeapon[rand]);
 let rValue = TabWeapon[rand];
 image.src = rValue.image;
-let weapon = rValue.name;
+let weapon = rValue;
 
 /*
 --------------------------------------------------------------------------------
@@ -124,13 +87,7 @@ ButtonSubmit.addEventListener('click' , () =>{
         recherche.disabled = "true";
         trouvee = true;
         TotalTry++;
-        let proposition = null;
-        TabArme.forEach(arme =>{
-            if(arme.name.toUpperCase() === rValue.name.toUpperCase()){
-                proposition = arme;
-            }
-        })
-        affichage(proposition);
+        affichage(weapon);
     }
     else{
         ajouterTabreponse();
@@ -143,7 +100,7 @@ ButtonSubmit.addEventListener('click' , () =>{
 
 const ajouterTabreponse = () =>{
     let proposition = null;
-    TabArme.forEach(arme =>{
+    TabWeapon.forEach(arme =>{
         if(arme.name.toUpperCase() == recherche.value.toUpperCase()){
             proposition = arme;
         }
@@ -160,7 +117,7 @@ const ajouterTabreponse = () =>{
     }
 }
 
-const affichage = ( perso=null ) =>{
+const affichage = ( Weapon=null ) =>{
     if(!trouvee){
         const TabReponseReverse = TabReponse.reverse();
         const afficheproposition = document.getElementById("display-results");
@@ -174,13 +131,14 @@ const affichage = ( perso=null ) =>{
             divarme.textContent = reponse.name;
             divConteneur.appendChild(divimg);
             divConteneur.appendChild(divarme);
-            divimg.style.width = "30%";
-            divimg.style.height = "50%";
+            divimg.style.maxWidth = "30%";
+            divimg.style.maxHeight = "30%";
             divConteneur.style.display = "flex";
             divConteneur.style.justifyContent = "center";
             divConteneur.style.alignItems = "center";
             divConteneur.style.backgroundColor = "red";
-            divConteneur.style.width = "30%";
+            divConteneur.style.maxWidth = "30%";
+            divConteneur.style.maxHeight = "30%"
             afficheproposition.appendChild(divConteneur);
         })
         ///////
@@ -190,26 +148,27 @@ const affichage = ( perso=null ) =>{
         TabReponse.reverse();
         ListProposition.style.display = "none";
     }
-    else if(arme!=null){
+    else if(Weapon!=null){
+        console.log("bite1");
         const DivBonneReponse = document.createElement("div");
         const divimg = document.createElement("img");
-        divimg.src = arme.image;
+        divimg.src = Weapon.image;
         divimg.alt = "image gg";
         const divarme = document.createElement("h3");
-        divarme.textContent = arme.name;
+        divarme.textContent = Weapon.name;
         bonneReponse.appendChild(DivBonneReponse);
         DivBonneReponse.appendChild(divimg);
         DivBonneReponse.appendChild(divarme);
-        divimg.style.width = "30%";
-        divimg.style.height = "50%";
+        divimg.style.maxWidth = "30%";
+        divimg.style.maxheight = "30%";
         DivBonneReponse.style.display = "flex";
         DivBonneReponse.style.justifyContent = "center";
         DivBonneReponse.style.alignItems = "center";
         DivBonneReponse.style.backgroundColor = "Green";
-        DivBonneReponse.style.width = "30%";
-        DivBonneReponse.style.height = "50%";
+        DivBonneReponse.style.maxWidth = "30%";
+        DivBonneReponse.style.maxheight = "30%";
         ListProposition.innerHTML="";
-        afficherFin(arme);
+        afficherFin(Weapon);
     }
     recherche.value = "";
 }
@@ -220,6 +179,7 @@ affichage fin de manche une fois l'arme trouvé
 -------------------------------------------------------------------------------
 */
 const afficherFin = (reponse) =>{
+    console.log("bite");
     document.getElementById("GG").style.border = "solid green 8px";
     document.getElementById("GG").style.borderRadius = "10px";
     document.getElementById("GG").style.width = "30%";
@@ -241,7 +201,7 @@ const afficherFin = (reponse) =>{
     document.getElementById("doubleBordure").style.border = "solid white 2px";
     document.getElementById("doubleBordure").style.paddingRight = "150%";
     document.getElementById("doubleBordure").style.paddingLeft = "150%";
-    document.getElementById("suivant").textContent = "Weapon";
+    document.getElementById("suivant").textContent = "Quote";
     document.getElementById("suivant").style.textAlign = "center";
     document.getElementById("suivant").style.color = "white";
     document.getElementById("suivant").style.padding = "5%";
@@ -306,7 +266,7 @@ const ajouterProposition =() =>{
         TabProposition = [];
     }
     else{
-        TabArme.forEach(arme =>{
+        TabWeapon.forEach(arme =>{
             if(arme.name.toUpperCase().includes(recherche.value.toUpperCase())){
                 if(!TabReponse.includes(arme) && !TabProposition.includes(arme)){
                     TabProposition.push(arme);
