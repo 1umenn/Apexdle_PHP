@@ -21,6 +21,8 @@
         <button class="mapButtons" value="Storm Point">Storm Point</button>
         <button class="mapButtons" value="Broken Moon">Broken Moon</button>
         <button class="mapButtons" value="World's Edge">World's Edge</button>
+        <button class="mapButtons" value="E-District">E-District</button>
     </div>
+    
     </body>
 </html>

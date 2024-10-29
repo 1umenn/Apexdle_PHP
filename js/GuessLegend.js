@@ -3,42 +3,39 @@
  init tableau
  --------------------------------------------------------------------------
  */
-let TabWeapon = [
-    {image : '../image/arme/30-30.webp',  name : '30-30 Repeater'},
-    {image : '../image/arme/Alternator.webp',  name : 'Alternator SMG'},
-    {image : '../image/arme/Bow.webp',  name : 'Bocek Compound Bow'},
-    {image : '../image/arme/CAR.webp',  name : 'C.A.R SMG'},
-    {image : '../image/arme/Devotion.webp',  name : 'Devotion LMG'},
-    {image : '../image/arme/EVA-8.webp',  name : 'EVA-8 Auto'},
-    {image : '../image/arme/Flatline.webp',  name : 'VK-47 Flatline'},
-    {image : '../image/arme/fusil_charge.webp',  name : 'Charge Rifle'},
-    {image : '../image/arme/G7.webp',  name : 'G7 Scout'},
-    {image : '../image/arme/Havoc.webp',  name : 'HAVOC Rifle'},
-    {image : '../image/arme/Hemlock.webp',  name : 'Hemlock Burst AR'},
-    {image : '../image/arme/Kraber.webp',  name : 'Kraber .50-Cal Sniper'},
-    {image : '../image/arme/L-star.webp',  name : 'L-STAR EMG'},
-    {image : '../image/arme/Longbow.webp',  name : 'Longbow DMR'},
-    {image : '../image/arme/Mastif.webp',  name : 'Mastiff Shotgun'},
-    {image : '../image/arme/Mozambique.webp',  name : 'Mozambique Shotgun'},
-    {image : '../image/arme/Nemesis.webp',  name : 'Nemesis Burst AR'},
-    {image : '../image/arme/P2020.webp',  name : 'P2020'},
-    {image : '../image/arme/PeaceKeeper.webp',  name : 'Peacekeeper'},
-    {image : '../image/arme/Prowler.webp',  name : 'Prowler Burst PDW'},
-    {image : '../image/arme/R-99.webp',  name : 'R-99 SMG'},
-    {image : '../image/arme/R-301.webp',  name : 'R-301 Carabine'},
-    {image : '../image/arme/Rampage.webp',  name : 'Rampage LMG'},
-    {image : '../image/arme/RE-45.webp',  name : 'RE-45 Auto'},
-    {image : '../image/arme/sentinel.webp',  name : 'Sentinel'},
-    {image : '../image/arme/Spitfire.webp',  name : 'M600 Spitfire'},
-    {image : '../image/arme/Throwing_Knife.webp', name : 'Throwing knife'},
-    {image : '../image/arme/Triple_take.webp',  name : 'Triple Take'},
-    {image : '../image/arme/Volt.webp', name : 'Volt SMG'},
-    {image : '../image/arme/Wingman.webp', name : 'Wingman'},
-    ];
+ let TabLegend = [
+    {image : '../image/perso/alter.webp', type : 'Skirmisher', agent : 'Alter',sexe: 'f', date: '2021'},
+    {image : '../image/perso/ash.webp', type : 'Assault', agent : 'Ash',sexe: 'f', date: '2021'},
+    {image : '../image/perso/ballistic.webp', type : 'Assault', agent : 'Ballistic',sexe: 'h',date: '2023'},
+    {image : '../image/perso/bangalore.webp', type : 'Assault', agent : 'Bangalore',sexe: 'f', date:'2019'},
+    {image : '../image/perso/bloodhound.webp', type : 'Recon', agent : 'Bloodhound', sexe: 'u', date:'2019'},
+    {image : '../image/perso/catalyst.webp', type : 'Controller', agent : 'Catalyst',sexe: 'f', date:'2023'},
+    {image : '../image/perso/caustic.webp', type : 'Controller', agent : 'Caustic',sexe: 'h', date:'2019'},
+    {image : '../image/perso/conduit.png', type : 'Support', agent : 'Conduit',sexe: 'f',date: '2023'},
+    {image : '../image/perso/crypto.webp', type : 'Recon', agent : 'Crypto',sexe: 'h', date: '2019'},
+    {image : '../image/perso/fuse.webp', type : 'Assault', agent : 'Fuse', sexe: 'h',date: '2021'},
+    {image : '../image/perso/gibi.webp', type : 'Support', agent : 'Gibraltar', sexe: 'h',date:'2019'},
+    {image : '../image/perso/horizon.webp', type : 'Skirmisher', agent : 'Horizon', sexe: 'f',date:'2020'},
+    {image : '../image/perso/lifeline.png', type : 'Support', agent : 'Lifeline', sexe: 'f',date:'2019'},
+    {image : '../image/perso/loba.webp', type : 'Support', agent : 'Loba', sexe: 'f',date:'2020'},
+    {image : '../image/perso/madmaggie.png', type : 'Assault', agent : 'Mad Maggie', sexe: 'f',date:'2022'},
+    {image : '../image/perso/mirage.png', type : 'Support', agent : 'Mirage', sexe: 'h',date:'2019'},
+    {image : '../image/perso/newcastle.webp', type : 'Support', agent : 'Newcastle', sexe: 'h',date:'2022'},
+    {image : '../image/perso/octane.webp', type : 'Skirmisher', agent : 'Octane', sexe: 'h',date:'2019'},
+    {image : '../image/perso/pathfinder.webp', type : 'Skirmisher', agent : 'Pathfinder', sexe: 'h',date:'2019'},
+    {image : '../image/perso/rampart.webp', type : 'Controller', agent : 'Rampart', sexe: 'f',date:'2020'},
+    {image : '../image/perso/revenant.webp', type : 'Skirmisher', agent : 'Revenant', sexe: 'h',date:'2020'},
+    {image : '../image/perso/seer.png', type : 'Recon', agent : 'Seer', sexe: 'h',date:'2021'},
+    {image : '../image/perso/valkyrie.webp', type : 'Skirmisher', agent : 'Valkyrie', sexe: 'f',date:'2021'},
+    {image : '../image/perso/vantage.webp', type : 'Recon', agent : 'Vantage', sexe: 'f',date:'2022'},
+    {image : '../image/perso/wattson.webp', type : 'Controller', agent : 'Wattson', sexe: 'f',date:'2019'},
+    {image : '../image/perso/wraith.webp', type : 'Assault', agent : 'Wraith', sexe: 'f',date:'2019'}
+];
 
 let TabReponse = [];
 
 let TabProposition = [];
+
 
 
 /*
@@ -47,7 +44,6 @@ init attribut utile
 -------------------------------------------------------------------------------
 */
 
-const image = document.getElementById("WeaponImage");
 
 let TotalTry = 0;
 
@@ -63,31 +59,29 @@ const ButtonSubmit = document.getElementById("submit");
 
 const bonneReponse = document.getElementById("display-good-results");
 
-let i = 0;
-
 let ListPropositionTab = document.querySelectorAll("#no-result ul li");
 
 
 
 /**
- * pour afficher l'image et sauvegarder l'arme correspondant
+ * pour afficher l'image et sauvegarder l'agent correspondant
  */
-let rand = Math.random() * TabWeapon.length | 0;
-let rValue = TabWeapon[rand];
-image.src = rValue.image;
-let weapon = rValue;
+let rand = Math.random() * TabLegend.length | 0;
+let rValue = TabLegend[rand];
+let agent = rValue.agent;
 
 /*
 --------------------------------------------------------------------------------
-validation arme
+validation perso
 --------------------------------------------------------------------------------
 */
 ButtonSubmit.addEventListener('click' , () =>{
-    if(recherche.value.toUpperCase() === rValue.name.toUpperCase()){
+    if(recherche.value.toUpperCase() === rValue.agent.toUpperCase()){
         recherche.disabled = "true";
         trouvee = true;
         TotalTry++;
-        affichage(weapon);
+        affichageTour(rValue);
+        affichage(rValue);
     }
     else{
         ajouterTabreponse();
@@ -100,9 +94,9 @@ ButtonSubmit.addEventListener('click' , () =>{
 
 const ajouterTabreponse = () =>{
     let proposition = null;
-    TabWeapon.forEach(arme =>{
-        if(arme.name.toUpperCase() == recherche.value.toUpperCase()){
-            proposition = arme;
+    TabLegend.forEach(perso =>{
+        if(perso.agent.toUpperCase() == recherche.value.toUpperCase()){
+            proposition = perso;
         }
     })
     let bool = false;
@@ -117,66 +111,98 @@ const ajouterTabreponse = () =>{
     }
 }
 
-const affichage = ( Weapon=null ) =>{
-    if(!trouvee){
-        const TabReponseReverse = TabReponse.reverse();
-        const afficheproposition = document.getElementById("display-results");
-        afficheproposition.innerHTML = "";
-        TabReponseReverse.forEach(reponse =>{
-            const divConteneur = document.createElement("div");
-            const divimg = document.createElement("img");
-            divimg.src = reponse.image;
-            divimg.alt="proposition";
-            divimg.style.maxWidth = "50%";
-            divimg.style.maxHeight = "50%";
-            const divarme = document.createElement("h3");
-            divarme.textContent = reponse.name;
-            divConteneur.appendChild(divimg);
-            divConteneur.appendChild(divarme);
-            divConteneur.style.display = "flex";
-            divConteneur.style.justifyContent = "center";
-            divConteneur.style.alignItems = "center";
-            divConteneur.style.backgroundColor = "red";
-            divConteneur.style.width = "30%";
-            divConteneur.style.height = "70px";
-            afficheproposition.appendChild(divConteneur);
-        })
-        ///////
-        afficheproposition.style.position = "relative";
-        afficheproposition.style.zIndex = "0";
-        ///////
-        TabReponse.reverse();
-        ListProposition.style.display = "none";
-    }
-    else if(Weapon!=null){
-        const DivBonneReponse = document.createElement("div");
-        const divimg = document.createElement("img");
-        divimg.src = Weapon.image;
-        divimg.alt = "image gg";
-        divimg.style.maxWidth = "50%";
-        divimg.style.maxHeight = "50%";
-        const divarme = document.createElement("h3");
-        divarme.textContent = Weapon.name;
-        bonneReponse.appendChild(DivBonneReponse);
-        DivBonneReponse.appendChild(divimg);
-        DivBonneReponse.appendChild(divarme);
-        divimg.style.maxWidth = "30%";
-        divimg.style.maxheight = "30%";
-        DivBonneReponse.style.display = "flex";
-        DivBonneReponse.style.justifyContent = "center";
-        DivBonneReponse.style.alignItems = "center";
-        DivBonneReponse.style.backgroundColor = "Green";
-        DivBonneReponse.style.width = "30%";
-        DivBonneReponse.style.height = "70px";
-        ListProposition.innerHTML="";
-        afficherFin(Weapon);
-    }
+const affichage = () =>{
+    const TabReponseReverse = TabReponse.reverse();
+    const afficheproposition = document.getElementById("display-results");
+    afficheproposition.innerHTML = "";
+    TabReponseReverse.forEach(reponse =>{
+        const DivConteneurAgent = document.createElement("div");
+        const DivimgAgent = document.createElement("div");
+        const DivNomAgent = document.createElement("div");
+        const DivSexAgent = document.createElement("div");
+        const DivRoleAgent = document.createElement("div");
+        const DivDateSortie = document.createElement("div");
+
+        const img = document.createElement("img");
+        img.src = reponse.image;
+        img.alt = "imgPropal";
+        DivimgAgent.appendChild(img);
+        DivimgAgent.style.backgroundColor = "red";
+        DivimgAgent.style.width = "20%";
+        DivimgAgent.style.maxHeight = "150px";
+        DivimgAgent.style.margin = "1%";
+        DivimgAgent.style.border = "solid white 1px";
+        DivimgAgent.style.display = "flex";
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "80%";
+        img.style.alignSelf = "flex-end";
+        DivConteneurAgent.appendChild(DivimgAgent);
+
+        const Nom = document.createElement("p");
+        Nom.textContent = reponse.agent;
+        DivNomAgent.appendChild(Nom);
+        DivNomAgent.style.backgroundColor = "red";
+        DivNomAgent.style.width = "20%";
+        DivNomAgent.style.maxHeight = "150px";
+        DivNomAgent.style.border = "solid white 1px";
+        DivNomAgent.style.margin = "1.5%";
+        Nom.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivNomAgent);
+
+        const Sex = document.createElement("p");
+        if(reponse.sexe =='f'){
+            Sex.textContent = "Female";
+        }
+        else{
+            Sex.textContent = "Male"
+        }
+        DivSexAgent.appendChild(Sex);
+        DivSexAgent.style.backgroundColor = "red";
+        DivSexAgent.style.width = "20%";
+        DivSexAgent.style.maxHeight = "150px";
+        DivSexAgent.style.border = "solid white 1px";
+        DivSexAgent.style.margin = "1.5%";
+        Sex.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivSexAgent);
+
+        const role = document.createElement("p");
+        role.textContent = reponse.type;
+        DivRoleAgent.appendChild(role);
+        DivRoleAgent.style.backgroundColor = "red";
+        DivRoleAgent.style.width = "20%";
+        DivRoleAgent.style.maxHeight = "150px";
+        DivRoleAgent.style.border = "solid white 1px";
+        DivRoleAgent.style.margin = "1.5%";
+        role.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivRoleAgent);
+
+        const relDate = document.createElement("p");
+        relDate.textContent = reponse.date;
+        DivDateSortie.appendChild(relDate);
+        DivDateSortie.style.backgroundColor = "red";
+        DivDateSortie.style.width = "20%";
+        DivDateSortie.style.maxHeight = "150px";
+        DivDateSortie.style.border = "solid white 1px";
+        DivDateSortie.style.margin = "1.5%";
+        relDate.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivDateSortie);
+
+        DivConteneurAgent.style.display = "flex";
+        afficheproposition.appendChild(DivConteneurAgent);
+        
+        
+        
+    })
+    afficheproposition.style.display = "flex"; 
+    afficheproposition.style.flexDirection ="column";
+    TabReponse.reverse();
+    ListProposition.style.display = "none";
     recherche.value = "";
 }
 
 /*
 -------------------------------------------------------------------------------
-affichage fin de manche une fois l'arme trouvé
+affichage fin de manche une fois la legend trouvé
 -------------------------------------------------------------------------------
 */
 const afficherFin = (reponse) =>{
@@ -190,7 +216,7 @@ const afficherFin = (reponse) =>{
     document.getElementById("tout").style.display = "flex";
     document.getElementById("tout").style.flexDirection = "column";
     document.getElementById("tout").style.alignItems = "center";
-    document.getElementById("nom").textContent = reponse.name;
+    document.getElementById("nom").textContent = reponse.agent;
     document.getElementById("try").textContent = "TRY : " + TotalTry;
     document.getElementById("perso").style.display ="flex";
     document.querySelector("#perso img").src = reponse.image;
@@ -201,7 +227,7 @@ const afficherFin = (reponse) =>{
     document.getElementById("doubleBordure").style.border = "solid white 2px";
     document.getElementById("doubleBordure").style.paddingRight = "150%";
     document.getElementById("doubleBordure").style.paddingLeft = "150%";
-    document.getElementById("suivant").textContent = "Quote";
+    document.getElementById("suivant").textContent = "Weapon";
     document.getElementById("suivant").style.textAlign = "center";
     document.getElementById("suivant").style.color = "white";
     document.getElementById("suivant").style.padding = "5%";
@@ -217,7 +243,7 @@ const afficherFin = (reponse) =>{
 
 /*
 ---------------------------------------------------------------------------------------------
-affichage Proposition arme
+affichage Proposition personnage
 ---------------------------------------------------------------------------------------------
 */
 
@@ -226,8 +252,8 @@ affichage Proposition arme
 
 recherche.addEventListener('keydown',(event)=>{
     if((event.key == 'Enter' || event =='13') && TabProposition.length >= 0){
-        let arme = TabProposition[SelectedProposition];
-        recherche.value = arme.name;
+        let legend = TabProposition[SelectedProposition];
+        recherche.value = legend.agent;
         ButtonSubmit.click();
         SelectedProposition = 0;
     }
@@ -266,10 +292,10 @@ const ajouterProposition =() =>{
         TabProposition = [];
     }
     else{
-        TabWeapon.forEach(arme =>{
-            if(arme.name.toUpperCase().includes(recherche.value.toUpperCase())){
-                if(!TabReponse.includes(arme) && !TabProposition.includes(arme)){
-                    TabProposition.push(arme);
+        TabLegend.forEach(legend =>{
+            if(legend.agent.toUpperCase().includes(recherche.value.toUpperCase())){
+                if(!TabReponse.includes(legend) && !TabProposition.includes(legend)){
+                    TabProposition.push(legend);
                 }
             }
         })
@@ -286,7 +312,7 @@ const printPropal = () =>{
         ListProposition.style.display = "block";
         TabProposition.forEach(propal =>{
             const proposition = document.createElement("li");
-            proposition.textContent = propal.name;
+            proposition.textContent = propal.agent;
             proposition.style.textAlign = "center";
             proposition.style.paddingTop = "5%";
             proposition.style.backgroundColor = "rgb(128,128,128)";
