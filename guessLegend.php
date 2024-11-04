@@ -34,7 +34,31 @@
         </div>
         <ul id="display-results">
         </ul>
-
+        
+        <div id="bordure">
+        <div id="GG">
+            <div id="tout">
+                <p id="texteGG"></p>
+                <div id="perso">
+                    <img src="bg" alt="">
+                    <div id="txt">
+                        <p id="nom"></p>
+                        <p id="try"></p>
+                    </div>
+                </div>
+                <a href="guessWeapon.php">
+                    <div id="button">
+                        <div id="doubleBordure">
+                            <div id ="SousCategorie">
+                                <h3 id="suivant"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="vide"></div>
     </main>
 </body>
 

@@ -119,3 +119,9 @@ button:hover {
 #Apexdle{
     letter-spacing: 10px;
 }
+
+#bordure{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}

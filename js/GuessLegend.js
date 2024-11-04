@@ -62,13 +62,12 @@ const bonneReponse = document.getElementById("display-good-results");
 let ListPropositionTab = document.querySelectorAll("#no-result ul li");
 
 
-
+recherche.value = "";
 /**
  * pour afficher l'image et sauvegarder l'agent correspondant
  */
 let rand = Math.random() * TabLegend.length | 0;
 let rValue = TabLegend[rand];
-let agent = rValue.agent;
 
 /*
 --------------------------------------------------------------------------------
@@ -79,19 +78,22 @@ ButtonSubmit.addEventListener('click' , () =>{
     if(recherche.value.toUpperCase() === rValue.agent.toUpperCase()){
         recherche.disabled = "true";
         trouvee = true;
-        TotalTry++;
-        affichageTour(rValue);
-        affichage(rValue);
     }
-    else{
-        ajouterTabreponse();
-        affichage();
+    affichageTour(rValue);
+    ajouterTabreponse();
+    affichage();
+    if(trouvee){
+        afficherFin(rValue);
     }
     recherche.value = "";
 })
 
 
-
+/*
+--------------------------------------------------------------------------------
+ajout du perso voulu dans le tableau des reponse
+--------------------------------------------------------------------------------
+*/
 const ajouterTabreponse = () =>{
     let proposition = null;
     TabLegend.forEach(perso =>{
@@ -111,6 +113,12 @@ const ajouterTabreponse = () =>{
     }
 }
 
+
+/*
+--------------------------------------------------------------------------------
+gere l'affichage du jeu 
+--------------------------------------------------------------------------------
+*/
 const affichage = () =>{
     const TabReponseReverse = TabReponse.reverse();
     const afficheproposition = document.getElementById("display-results");
@@ -123,11 +131,22 @@ const affichage = () =>{
         const DivRoleAgent = document.createElement("div");
         const DivDateSortie = document.createElement("div");
 
+        const Nom = document.createElement("p");
+        Nom.textContent = reponse.agent;
+        DivNomAgent.appendChild(Nom);
+        if(Nom.textContent.toUpperCase() == rValue.agent.toUpperCase()){DivNomAgent.style.backgroundColor = "green";}
+        else{DivNomAgent.style.backgroundColor = "red";}
+        DivNomAgent.style.width = "20%";
+        DivNomAgent.style.maxHeight = "150px";
+        DivNomAgent.style.border = "solid white 1px";
+        DivNomAgent.style.margin = "1.5%";
+        Nom.style.textAlign = "center";
+
         const img = document.createElement("img");
         img.src = reponse.image;
         img.alt = "imgPropal";
         DivimgAgent.appendChild(img);
-        DivimgAgent.style.backgroundColor = "red";
+        DivimgAgent.style.backgroundColor = DivNomAgent.style.backgroundColor;
         DivimgAgent.style.width = "20%";
         DivimgAgent.style.maxHeight = "150px";
         DivimgAgent.style.margin = "1%";
@@ -138,26 +157,15 @@ const affichage = () =>{
         img.style.alignSelf = "flex-end";
         DivConteneurAgent.appendChild(DivimgAgent);
 
-        const Nom = document.createElement("p");
-        Nom.textContent = reponse.agent;
-        DivNomAgent.appendChild(Nom);
-        DivNomAgent.style.backgroundColor = "red";
-        DivNomAgent.style.width = "20%";
-        DivNomAgent.style.maxHeight = "150px";
-        DivNomAgent.style.border = "solid white 1px";
-        DivNomAgent.style.margin = "1.5%";
-        Nom.style.textAlign = "center";
         DivConteneurAgent.appendChild(DivNomAgent);
 
         const Sex = document.createElement("p");
-        if(reponse.sexe =='f'){
-            Sex.textContent = "Female";
-        }
-        else{
-            Sex.textContent = "Male"
-        }
+        if(reponse.sexe =='f'){Sex.textContent = "Female";}
+        else if(reponse.sexe =='h'){Sex.textContent = "Male"}
+        else{Sex.textContent = "Unknown"}
         DivSexAgent.appendChild(Sex);
-        DivSexAgent.style.backgroundColor = "red";
+        if(reponse.sexe == rValue.sexe){DivSexAgent.style.backgroundColor = "green";}
+        else{DivSexAgent.style.backgroundColor = "red";}
         DivSexAgent.style.width = "20%";
         DivSexAgent.style.maxHeight = "150px";
         DivSexAgent.style.border = "solid white 1px";
@@ -168,7 +176,8 @@ const affichage = () =>{
         const role = document.createElement("p");
         role.textContent = reponse.type;
         DivRoleAgent.appendChild(role);
-        DivRoleAgent.style.backgroundColor = "red";
+        if(role.textContent == rValue.type){DivRoleAgent.style.backgroundColor = "green";}
+        else{DivRoleAgent.style.backgroundColor = "red";}
         DivRoleAgent.style.width = "20%";
         DivRoleAgent.style.maxHeight = "150px";
         DivRoleAgent.style.border = "solid white 1px";
@@ -179,7 +188,8 @@ const affichage = () =>{
         const relDate = document.createElement("p");
         relDate.textContent = reponse.date;
         DivDateSortie.appendChild(relDate);
-        DivDateSortie.style.backgroundColor = "red";
+        if(relDate.textContent == rValue.date){DivDateSortie.style.backgroundColor = "green";}
+        else{DivDateSortie.style.backgroundColor = "red";}
         DivDateSortie.style.width = "20%";
         DivDateSortie.style.maxHeight = "150px";
         DivDateSortie.style.border = "solid white 1px";
@@ -190,8 +200,6 @@ const affichage = () =>{
         DivConteneurAgent.style.display = "flex";
         afficheproposition.appendChild(DivConteneurAgent);
         
-        
-        
     })
     afficheproposition.style.display = "flex"; 
     afficheproposition.style.flexDirection ="column";
@@ -199,6 +207,95 @@ const affichage = () =>{
     ListProposition.style.display = "none";
     recherche.value = "";
 }
+
+/*
+-------------------------------------------------------------------------------
+affichage du jeu sur le tour en cours
+-------------------------------------------------------------------------------
+*/
+const affichageTour=(askedValue) =>{ 
+    const TabReponseReverse = TabReponse.reverse();
+    const afficheproposition = document.getElementById("display-results");
+    afficheproposition.innerHTML = "";
+    const DivConteneurAgent = document.createElement("div");
+        const DivimgAgent = document.createElement("div");
+        const DivNomAgent = document.createElement("div");
+        const DivSexAgent = document.createElement("div");
+        const DivRoleAgent = document.createElement("div");
+        const DivDateSortie = document.createElement("div");
+
+        const Nom = document.createElement("p");
+        Nom.textContent = askedValue.agent;
+        DivNomAgent.appendChild(Nom);
+        if(Nom.textContent.toUpperCase() == rValue.agent.toUpperCase()){DivNomAgent.style.backgroundColor = "green";}
+        else{DivNomAgent.style.backgroundColor = "red";}
+        DivNomAgent.style.width = "20%";
+        DivNomAgent.style.maxHeight = "150px";
+        DivNomAgent.style.border = "solid white 1px";
+        DivNomAgent.style.margin = "1.5%";
+        Nom.style.textAlign = "center";
+
+        const img = document.createElement("img");
+        img.src = askedValue.image;
+        img.alt = "imgPropal";
+        DivimgAgent.appendChild(img);
+        DivimgAgent.style.backgroundColor = DivNomAgent.style.backgroundColor;
+        DivimgAgent.style.width = "20%";
+        DivimgAgent.style.maxHeight = "150px";
+        DivimgAgent.style.margin = "1%";
+        DivimgAgent.style.border = "solid white 1px";
+        DivimgAgent.style.display = "flex";
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "80%";
+        img.style.alignSelf = "flex-end";
+        DivConteneurAgent.appendChild(DivimgAgent);
+        DivimgAgent.style.transitionDuration = "2s";
+        setInterval(null, 2000);
+
+        DivConteneurAgent.appendChild(DivNomAgent);
+        setInterval(null, 2000);
+        const Sex = document.createElement("p");
+        if(askedValue.sexe =='f'){Sex.textContent = "Female";}
+        else if(askedValue.sexe =='h'){Sex.textContent = "Male"}
+        else{Sex.textContent = "Unknown"}
+        DivSexAgent.appendChild(Sex);
+        if(askedValue.sexe == rValue.sexe){DivSexAgent.style.backgroundColor = "green";}
+        else{DivSexAgent.style.backgroundColor = "red";}
+        DivSexAgent.style.width = "20%";
+        DivSexAgent.style.maxHeight = "150px";
+        DivSexAgent.style.border = "solid white 1px";
+        DivSexAgent.style.margin = "1.5%";
+        Sex.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivSexAgent);
+
+        const role = document.createElement("p");
+        role.textContent = askedValue.type;
+        DivRoleAgent.appendChild(role);
+        if(role.textContent == rValue.type){DivRoleAgent.style.backgroundColor = "green";}
+        else{DivRoleAgent.style.backgroundColor = "red";}
+        DivRoleAgent.style.width = "20%";
+        DivRoleAgent.style.maxHeight = "150px";
+        DivRoleAgent.style.border = "solid white 1px";
+        DivRoleAgent.style.margin = "1.5%";
+        role.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivRoleAgent);
+
+        const relDate = document.createElement("p");
+        relDate.textContent = askedValue.date;
+        DivDateSortie.appendChild(relDate);
+        if(relDate.textContent == rValue.date){DivDateSortie.style.backgroundColor = "green";}
+        else{DivDateSortie.style.backgroundColor = "red";}
+        DivDateSortie.style.width = "20%";
+        DivDateSortie.style.maxHeight = "150px";
+        DivDateSortie.style.border = "solid white 1px";
+        DivDateSortie.style.margin = "1.5%";
+        relDate.style.textAlign = "center";
+        DivConteneurAgent.appendChild(DivDateSortie);
+
+        DivConteneurAgent.style.display = "flex";
+        afficheproposition.appendChild(DivConteneurAgent);
+}
+
 
 /*
 -------------------------------------------------------------------------------
@@ -243,13 +340,9 @@ const afficherFin = (reponse) =>{
 
 /*
 ---------------------------------------------------------------------------------------------
-affichage Proposition personnage
+condition d'affichage du tableau de Proposition personnage
 ---------------------------------------------------------------------------------------------
 */
-
-
-
-
 recherche.addEventListener('keydown',(event)=>{
     if((event.key == 'Enter' || event =='13') && TabProposition.length >= 0){
         let legend = TabProposition[SelectedProposition];
@@ -281,6 +374,11 @@ recherche.addEventListener('input', () =>{
 })
 
 
+/*
+--------------------------------------------------------------------------------
+ajout au tableau des proposition si les caractere rechercher sont dans le nom
+--------------------------------------------------------------------------------
+*/
 const ajouterProposition =() =>{
     ListProposition.innerHTML="";
     TabProposition = [] ;
@@ -303,21 +401,27 @@ const ajouterProposition =() =>{
 }
 
 
-
+/*
+--------------------------------------------------------------------------------
+affichage du tableau de proposition
+--------------------------------------------------------------------------------
+*/
 const printPropal = () =>{
     if(recherche.value == ""){
         ListProposition.style.display = "none";
     }
     else{
         ListProposition.style.display = "block";
+        ListProposition.style.width = "20%";
         TabProposition.forEach(propal =>{
             const proposition = document.createElement("li");
             proposition.textContent = propal.agent;
+            proposition.style.color = "white";
+            proposition.textShadow = "5px 5px 5px black";
             proposition.style.textAlign = "center";
             proposition.style.paddingTop = "5%";
             proposition.style.backgroundColor = "rgb(128,128,128)";
             proposition.style.border = "solid white 2px";
-            proposition.style.width = recherche.style.width;
             proposition.style.listStyleType = "none";
             proposition.style.height = "1cm";
             proposition.style.cursor = "pointer";
@@ -354,10 +458,20 @@ const printPropal = () =>{
     }
 }
 
+/*
+--------------------------------------------------------------------------------
+hover sur un element de la liste de propal
+--------------------------------------------------------------------------------
+*/
 const dessus = (elt) =>{
     elt.style.backgroundColor = "black";
 }
 
+/*
+--------------------------------------------------------------------------------
+tous sauf hover, sur un element de la liste de propal
+--------------------------------------------------------------------------------
+*/
 const ailleur = (elt) =>{
     elt.style.backgroundColor = "rgb(128,128,128)";
 }
